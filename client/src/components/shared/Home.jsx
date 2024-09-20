@@ -25,7 +25,7 @@ const Home = () => {
   const getProducts = async()=>{
    try {
       setLoading(true);
-      const res = await axios.get("http://localhost:3000/api/v1/products");
+      const res = await axios.get("https://ecommerce-assignment-2-qcjd.onrender.com/api/v1/products");
       setProducts(res.data.products)
       setLoading(false);
    } catch (error) {
@@ -42,7 +42,7 @@ const Home = () => {
   const handleDelete = async()=>{
     try {
       setDeleteLoadig(true)
-      let res  = await axios.delete(`http://localhost:3000/api/v1/products/${productId}`)
+      let res  = await axios.delete(`https://ecommerce-assignment-2-qcjd.onrender.com/api/v1/products/${productId}`)
       setDeleteLoadig(false)
       if(res.data.success){
        toast.success("Item Deleted.")     

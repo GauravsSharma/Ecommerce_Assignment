@@ -6,9 +6,10 @@ import cors from "cors";
 import { v2 as cloudinary } from 'cloudinary';
 import product from "./routes/products.js"
 const app = express();
+
 dotenv.config();
 const corsOptions = {
-    origin: "http://localhost:5173",
+    origin: process.env.CLIENT_URL||"http://localhost:5173",
     credentials: true,
 };
 app.use(cors(corsOptions));
@@ -23,7 +24,7 @@ console.log(process.env.CLOUD_NAME);
 
 app.use("/api/v1",product)
 connecToDb()
-
-app.listen(3000,()=>{
+const port = process.env.PORT ||3000
+app.listen(port,()=>{
     console.log("Server running at port 3000");
 })

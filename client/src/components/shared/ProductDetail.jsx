@@ -11,7 +11,7 @@ const ProductDetail = () => {
     const getSingleProduct = async () => {
         try {
           setLoading(true);
-          const res = await axios.get(`http://localhost:3000/api/v1/products/${id}`, {
+          const res = await axios.get(`https://ecommerce-assignment-2-qcjd.onrender.com/api/v1/products/${id}`, {
             headers: {
               "Content-Type": "application/json"
             }

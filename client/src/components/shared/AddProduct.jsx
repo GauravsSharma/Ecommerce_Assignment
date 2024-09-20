@@ -45,7 +45,7 @@ const AddProductForm = () => {
   const handleSubmit = async (data,resetForm) => {
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/api/v1/products", data, {
+      const res = await axios.post("https://ecommerce-assignment-2-qcjd.onrender.com/api/v1/products", data, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
@@ -61,7 +61,7 @@ const AddProductForm = () => {
   const handleUpdate = async (data,resetForm) => {
     setLoading(true);
     try {
-      const res = await axios.put(`http://localhost:3000/api/v1/products/${id}`, data, {
+      const res = await axios.put(`https://ecommerce-assignment-2-qcjd.onrender.com/api/v1/products/${id}`, data, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
@@ -82,7 +82,7 @@ const AddProductForm = () => {
   const getSingleProduct = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:3000/api/v1/products/${id}`, {
+      const res = await axios.get(`https://ecommerce-assignment-2-qcjd.onrender.com/api/v1/products/${id}`, {
         headers: {
           "Content-Type": "application/json"
         }
